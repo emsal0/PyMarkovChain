@@ -6,12 +6,12 @@ class ProbabilityRow:
         self.row = row
         self.count = sum(self.table.values())
     def init_item(self,item):
-        self.table[item] = 0 
+        self.row[item] = 0 
     def add_one(item):
-        if item in self.table:
-            self.table[item] += 1 
+        if item in self.row:
+            self.row[item] += 1 
         else:
-            self.table[item] = 1
+            self.row[item] = 1
         self.count += 1
     def __setitem__(self,key,item):
         self.row[key] = item
