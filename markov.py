@@ -4,7 +4,7 @@ class ProbabilityRow:
     
     def __init__(self,row={}):
         self.row = row
-        self.count = sum(self.table.values())
+        self.count = sum(self.row.values())
     def init_item(self,item):
         self.row[item] = 0 
     def add_one(item):
