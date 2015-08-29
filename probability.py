@@ -9,11 +9,6 @@ class ProbabilityTableError(Exception):
 
 
 def select_with_probability(num, table):
-    try:
-        assert(sum(table.values()) == 1)
-    except:
-        print sum(table.values())
-        raise ProbabilityTableError("Probability table does not sum to 1: %d")
     r=0
     for i in range(len(table.keys())):
         key = table.keys()[i]
