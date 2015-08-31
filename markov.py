@@ -25,6 +25,8 @@ class ProbabilityRow:
     def select_with_probability(self):
         seed = random.random()
         probs = dict([(i,float(self.row[i])/self.count) for i in self.row])
+        if self.count == 0:
+            probs = self.row
         return probability.select_with_probability(seed,probs) 
     def __str__(self):
         return "ProbabilityRow("+str(self.row)+")"
@@ -60,11 +62,12 @@ class Corpus:
     def __iter__(self):
         return self.table.iteritems()
 
-testcorpus = Corpus()
+if __name__ == "__main__":
+    testcorpus = Corpus()
 
-a = [(random.randint(1,20),random.randint(1,20)) for i in range(100000)]
-for i in range(len(a)):
-    testcorpus.add_one(a[i])
+    a = [(random.randint(1,20),random.randint(1,20)) for i in range(100000)]
+    for i in range(len(a)):
+        testcorpus.add_one(a[i])
 
-init = 1
-print testcorpus.select_outcome(init)
+    init = 1
+    print testcorpus.select_outcome(init)

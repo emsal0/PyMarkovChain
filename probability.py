@@ -19,7 +19,7 @@ def select_with_probability(num, table):
             if num <= r + table[key] and num >= r:
                 return key
         r += table[key]
-    return -1
+    return table.keys()[-1]
 
 #def add_to_probability_table(s,table):
 
