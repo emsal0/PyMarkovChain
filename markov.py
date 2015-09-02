@@ -42,9 +42,6 @@ class Corpus:
             return
         else:
             self.table[item] = ProbabilityRow()
-            for key in self.table.keys()[:]: 
-                self.table[item].init_item(key)
-                self.table[key].init_item(item)
             self.table[item][item] = 0
     def add_one(self,spec):
         start = spec[0]
